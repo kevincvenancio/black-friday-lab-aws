@@ -1,6 +1,4 @@
-# Workshop DevOps na nuvem · Black Friday Lab
-
-Para preparar a aula, abra o [roteiro de montagem no Console AWS](site/public/roteiro-console.html). Os arquivos de Terraform ficam em [infraestrutura/terraform](infraestrutura/terraform/).
+# Black Friday Lab
 
 Laboratório de carga real com painel React/TypeScript, CloudFront/S3, integração direta API Gateway → SQS FIFO, processamento Lambda e estoque transacional DynamoDB. Os geradores são Lambdas distribuídas: a página inicia o teste e pode ser fechada durante a execução.
 
@@ -144,7 +142,7 @@ O endpoint autenticado `GET /runs` retorna dez resumos por página, dos mais rec
 
 Execuções novas são registradas pela Lambda de controle antes de iniciar os geradores. Consultar o histórico ou o relatório atualiza o resumo; resultados finais já salvos são reutilizados. Os registros de estoque, pedidos e metadados detalhados continuam expirando após sete dias. Se uma execução não tiver seu resultado final observado antes dessa expiração, a linha conserva o último resumo e informa que os detalhes expiraram, sem afirmar totais finais que não foram registrados.
 
-## Guia visual do workshop
+## Guia visual
 
 A página pública [`/guia-workshop.html`](site/public/guia-workshop.html) explica cada caixa da arquitetura, separa decisões de código e infraestrutura, traz um roteiro de mudanças graduais e inclui uma simulação local interativa. O simulador não chama a AWS nem inicia pedidos. O link também aparece na navegação do painel.
 
